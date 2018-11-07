@@ -14,6 +14,14 @@ using namespace std;
  * }
  */
 
+unsigned long long String_HashValue(string s){
+    unsigned long long PrimeBase= 233, PrimeModular = 19260817,
+                        result = 0;
+
+    for (auto c : s)
+        result =(result*PrimeBase+c)%PrimeModular;
+    return result;
+}
 void ShowOption(){
     
     printf("0)  Show me the Family Tree.\n");
